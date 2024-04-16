@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center justify-content-between">
+  <h1>Posts</h1>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Create Post', new_post_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<% if @posts.present? %>
+  <%= render @posts %>
+<% else %>
+  <div class="alert alert-info">
+    There are no posts yet.
+  </div>
+<% end %>

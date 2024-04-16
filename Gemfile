@@ -58,6 +58,7 @@ group :development, :test do
   gem "awesome_print", "~> 1.9", ">= 1.9.2"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "faker", "~> 3.3", ">= 3.3.1"
   gem "pry", "~> 0.14.2"
   gem "pry-byebug", "~> 3.10", ">= 3.10.1"
 end
