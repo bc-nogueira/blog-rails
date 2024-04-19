@@ -14,9 +14,9 @@
     <div class="h-100 d-flex flex-column">
       <%= render 'layouts/navbar' %>
 
-      <div class="container-fluid h-100">
-        <%= render 'layouts/flash_messages' %>
+      <%= render 'layouts/flash_messages' %>
 
+      <div class="container-fluid h-100">
         <%= yield %>
       </div>
     </div>

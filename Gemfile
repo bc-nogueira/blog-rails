@@ -53,6 +53,7 @@ gem "bootsnap", require: false
 
 # My gems
 gem "devise", "~> 4.9", ">= 4.9.4"
+gem "pagy", "~> 8.2"
 
 group :development, :test do
   gem "awesome_print", "~> 1.9", ">= 1.9.2"

@@ -8293,15 +8293,24 @@ var application = Application.start();
 application.debug = false;
 window.Stimulus = application;
 
-// app/javascript/controllers/hello_controller.js
-var hello_controller_default = class extends Controller {
+// app/javascript/controllers/alert_controller.js
+var alert_controller_default = class extends Controller {
   connect() {
-    this.element.textContent = "Hello World!";
+    setTimeout(() => {
+      this.element.animate(
+        // Keyframes
+        [{ opacity: 1 }, { opacity: 0 }],
+        // Animation options
+        { duration: 800 }
+      ).onfinish = () => {
+        this.element.remove();
+      };
+    }, 1e3);
   }
 };
 
 // app/javascript/controllers/index.js
-application.register("hello", hello_controller_default);
+application.register("alert", alert_controller_default);
 
 // node_modules/@popperjs/core/lib/index.js
 var lib_exports = {};
