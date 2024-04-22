@@ -1,4 +1,6 @@
 <%= form_with model: @post do |f| %>
+  <%= f.hidden_field :return_to, value: request.referer == posts_url ? 'index' : 'show' %>
+
   <div class="mb-3">
     <%= f.label :title, class: 'form-label' %>
     <%= f.text_field :title, class: 'form-control' %>
