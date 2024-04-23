@@ -9,6 +9,6 @@ class Comment < ApplicationRecord
   end
 
   def author_name
-    user.username
+    user&.username || 'anonymous'
   end
 end
