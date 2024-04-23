@@ -8298,14 +8298,12 @@ var alert_controller_default = class extends Controller {
   connect() {
     setTimeout(() => {
       this.element.animate(
-        // Keyframes
         [{ opacity: 1 }, { opacity: 0 }],
-        // Animation options
         { duration: 800 }
       ).onfinish = () => {
         this.element.remove();
       };
-    }, 1e3);
+    }, 3e3);
   }
 };
 
