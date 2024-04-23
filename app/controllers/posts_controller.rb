@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pagy, @posts = pagy(Post.order(created_at: :desc), items: 3)
+    @pagy, @posts = pagy(Post.includes(:comments).includes(:tags).order(created_at: :desc), items: 3)
   end
 
   def show
@@ -50,6 +50,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, tag_ids: [])
   end
 end

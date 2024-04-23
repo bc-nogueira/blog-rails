@@ -9,5 +9,10 @@
     <%= f.text_area :content, class: 'form-control' %>
   </div>
 
+  <div class="mb-3">
+    <%= f.label :tag_ids, class: 'form-label' %>
+    <%= f.select :tag_ids, tag_options, {}, { class: 'form-select', multiple: true, size: 5 } %>
+  </div>
+
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
