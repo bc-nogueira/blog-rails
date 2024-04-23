@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   authenticate :user do
     resources :comments, only: :destroy
     resources :posts, only: [:new, :create, :edit, :update, :destroy]
+    resources :users, only: :show
   end
   # devise_scope :user do
   #

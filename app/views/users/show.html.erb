@@ -1,0 +1,16 @@
+<h1>Your Profile</h1>
+
+<div>
+  <span class="fw-bold">Username:</span>
+  <span><%= current_user.username %></span>
+</div>
+
+<div>
+  <span class="fw-bold">Email:</span>
+  <span><%= current_user.email %></span>
+</div>
+
+<div class="mt-2 d-flex gap-2">
+  <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %>
+  <%= button_to "Cancel my account", registration_path(:user), data: { confirm: 'Are you sure?', turbo_confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger' %>
+</div>
