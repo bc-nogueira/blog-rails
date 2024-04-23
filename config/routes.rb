@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticate :user do
-    # resources :fjords, only: [:new, :create, :edit, :update, :destroy]
+    resources :comments, only: :destroy
     resources :posts, only: [:new, :create, :edit, :update, :destroy]
   end
   # devise_scope :user do
   #
   # end
 
+  resources :comments, only: :create
   resources :posts, only: [:index, :show]
 end

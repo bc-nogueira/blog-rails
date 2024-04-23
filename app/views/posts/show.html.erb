@@ -9,6 +9,9 @@
   <% end %>
 </div>
 
-<div class="fw-light text-secondary">by <%= @post.author_name %></div>
-<div class="fw-light text-secondary">at <%= @post.created_at.strftime('%H:%M %d/%m/%Y') %></div>
+<div class="fw-light text-secondary"><%= "by #{@post.author_name} at #{@post.created_at.strftime('%H:%M %d/%m/%Y')}" %></div>
 <p class="mt-3"><%= @post.content %></p>
+
+<%= render 'comments/form', post: @post %>
+
+<%= render 'comments/comments', comments: @comments %>

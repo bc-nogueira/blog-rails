@@ -5,7 +5,9 @@ class PostsController < ApplicationController
     @pagy, @posts = pagy(Post.order(created_at: :desc), items: 3)
   end
 
-  def show; end
+  def show
+    @comments = @post.comments
+  end
 
   def new
     @post = current_user.posts.new
