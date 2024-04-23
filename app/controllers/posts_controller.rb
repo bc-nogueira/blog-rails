@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:notice] = 'Post updated successfully!'
-      redirect_to params[:post][:return_to] == 'index' ? posts_path : @post
+      redirect_to @post
     else
       flash.now[:alert] = 'Failed to update post.'
       render :new, status: :unprocessable_entity

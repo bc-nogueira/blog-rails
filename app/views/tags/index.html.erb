@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center justify-content-between">
+  <h1>Tags</h1>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Create Tag', new_tag_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<% if @tags.present? %>
+  <%= render 'tags/tags', tags: @tags, pagy: @pagy %>
+<% else %>
+  <div class="alert alert-info">
+    There are no tags yet.
+  </div>
+<% end %>

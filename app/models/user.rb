@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :tags
 
   validates :username, presence: true
 end
