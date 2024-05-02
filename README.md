@@ -26,6 +26,7 @@ This is a simple blog app made for a challenge. It uses Ruby 3.2.2 and Rails 7.0
 - faker
 - pry
 - pry-byebug
+- rubocop
 
 ## How to run locally
 

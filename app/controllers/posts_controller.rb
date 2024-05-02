@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :find_post, only: %i[show edit update destroy]
 
   def index
     @posts = Post.includes(:comments).includes(:tags).order(created_at: :desc)
-    @tag_ids = params['tag_ids']&.reject { |id| id.blank? }
+    @tag_ids = params['tag_ids']&.reject(&:blank?)
     @posts = @posts.where(tags: { id: @tag_ids }) if @tag_ids.present?
     @pagy, @posts = pagy(@posts, items: 3)
   end

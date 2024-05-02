@@ -62,6 +62,8 @@ group :development, :test do
   gem "faker", "~> 3.3", ">= 3.3.1"
   gem "pry", "~> 0.14.2"
   gem "pry-byebug", "~> 3.10", ">= 3.10.1"
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :development do

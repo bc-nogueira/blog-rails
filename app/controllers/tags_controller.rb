@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :find_tag, only: [:edit, :update, :destroy]
+  before_action :find_tag, only: %i[edit update destroy]
 
   def index
     @pagy, @tags = pagy(Tag.order(created_at: :asc), items: 10)
