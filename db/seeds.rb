@@ -28,3 +28,8 @@ fourth_user.posts.create(title: Faker::Lorem.sentence(word_count: 3), content: F
 fourth_user.posts.create(title: Faker::Lorem.sentence(word_count: 3), content: Faker::Lorem.paragraphs(number: 10, supplemental: true).join, created_at: Faker::Time.between(from: 2.months.ago, to: Time.now))
 fourth_user.posts.create(title: Faker::Lorem.sentence(word_count: 3), content: Faker::Lorem.paragraphs(number: 10, supplemental: true).join, created_at: Faker::Time.between(from: 2.months.ago, to: Time.now))
 fourth_user.posts.create(title: Faker::Lorem.sentence(word_count: 3), content: Faker::Lorem.paragraphs(number: 10, supplemental: true).join, created_at: Faker::Time.between(from: 2.months.ago, to: Time.now))
+
+Tag.create(name: 'First', color: "##{SecureRandom.hex(3)}", user: first_user)
+Tag.create(name: 'Second', color: "##{SecureRandom.hex(3)}", user: second_user)
+Tag.create(name: 'Third', color: "##{SecureRandom.hex(3)}", user: third_user)
+Tag.create(name: 'Fourth', color: "##{SecureRandom.hex(3)}", user: fourth_user)
