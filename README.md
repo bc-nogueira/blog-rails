@@ -1,24 +1,36 @@
-# README
+# Blog Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple blog app made for a challenge. It uses Ruby 3.2.2 and Rails 7.0.8.1.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Authentication.
+  - Sign up, sign in, update profile (including password) and cancel account.
+- Posts CRUD.
+  - Logged users can read, create, update and destroy posts.
+  - Non-logged users can read posts.
+- Comments CRUD.
+  - Logged users can leave comments and manage their comments.
+  - Non-logged users can leave comments which will show as an anonymous comment.
+- Tags CRUD.
+  - Only logged users can manage tags.
 
-* System dependencies
+## Gems
 
-* Configuration
+- devise
+- pagy
 
-* Database creation
+**For local and test environments:**
 
-* Database initialization
+- awesome_print
+- faker
+- pry
+- pry-byebug
 
-* How to run the test suite
+## How to run locally
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repo to your local machine.
+2. Run `bundle install`
+3. Run `npm install`
+4. Run `rails db:create` and `rails db:migrate`
+5. Run `rails server`
