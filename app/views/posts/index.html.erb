@@ -6,6 +6,27 @@
   <% end %>
 </div>
 
+<div class="mb-3">
+  <%= form_with url: posts_path, method: :get, class: 'col-12 row row-cols-lg-auto g-3 align-items-center' do |f| %>
+    <div class="col-12">
+      <%= f.select :tag_ids,
+                   tag_options(@tag_ids),
+                   {},
+                   {
+                     placeholder: 'Filter by',
+                     class: 'form-select',
+                     multiple: true,
+                     data: { controller: 'select' }
+                   }
+      %>
+    </div>
+
+    <div class="col-12">
+      <%= f.submit 'Filter', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
+
 <% if @posts.present? %>
   <%= render 'posts/posts', posts: @posts, pagy: @pagy %>
 <% else %>
